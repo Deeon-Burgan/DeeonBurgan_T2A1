@@ -149,17 +149,61 @@ https://www.oaic.gov.au/privacy/the-privacy-act/
     - `Cassandra`  
     Cassandra is a free, open source, wide column store (uses tables, rows, and columns but names and format of columns can vary from row to row in the same table) NoSQL database system, designed to handle large amounts of data across many servers.
     - `Oracle`  
-    Oracle is a database commonly used for ---------------------
+    Oracle is a database commonly used for running online transaction processing, data warehousing and mixed database workloads. 
     - `Marko`  
     MarkoHTML is a 'reimagined' language for building dynamic user interfaces. Marko is very similar to standard HTML, but it extends the language to allow a developer to build modern applications in a declarative way.
-  - Describe the hardware used to host the app.
-  - Describe the interaction of technologies within the app
+  - Describe the hardware used to host the app.  
+  Ebay hosts it's website on an OpenStack private cloud platform that they developed themselves.  
+  OpenStack is a cloud operating system that manages and provisions all it's networking, compute, and storage resources by the use of common API euthentication mechanisms. OpenStack has a number of benefits which has made it a widely used technology, and they include:
+    - Great industry support
+    - Compatibility 
+    - Scalability 
+    - Security
+
+    OpenStack also provides an easy to manage panel that provides visibility, control and easy access to power management tools, which makes it easy for usetrs to manage/monitor their services.
+  - Describe the interaction of technologies within the app  
+  Users will interact directly with the application through the front-end via their browser of choice, which is run and hosted on Ebay's private cloud platform. The user's browsers will send http requests to the server, and in turn Ebay's servers will run through their extensive databases and models to find an answer to that request which will then be returned to the user.  
+  The front-end of Ebay would be controlled and managed by JavaScript (inc. ES6), and Node.js.  
+  Node.js is used to create and build fast scalable applications, which is used alongside Marko for the user interface.  
+  There is a lot that goes on, in the backend of Ebay. The main database system used for ebay is Oracle, as a large majority of the use of Ebay revolves around making online purchases and processing transactions.  
+  Apache TomCat is the software which is running the servers, it being a piece of software which combines a number of Java-based technologies to run applications built with Java.
   - Describe the way data is structured within the app
   - Identify entities which must be tracked by the app
+    - Users: tracks all information relevant to the users, could include, usernames, names, passwords, emails, addresses, etc.
+    - User Feedback: a rating from another user, which contains a star value and short note.
+    - Listing: tracks all information relevant to something that's being listed
+    - Stores: tracks all items in a user's specific store
+    - Messages: tracks the message and both user's in the interaction
+    - Purchase: tracks a specific purchase from a user
+    - Payment details: tracks a user's payment details
   - Identify the relationships and associations between the entities you have identified in part (e)
+    - Users:
+        - Has many: user feedback
+        - Has many: listings
+        - Has one: store
+        - Has many: messages
+        - Has one: purchases
+        - Has many: purchases
+        - Has one: payment details
+    - User Feedback:
+        - Has many: users
+    - Listing:
+        - Has one: users
+        - Has one: store
+    - Stores:
+        - Has one: user
+        - Has many: listings
+    - Messages:
+        - Has many: users
+    - Purchase: 
+        - Has many: users
+        - Has one: listing
+    - Payment details:
+        - Has one: user
   - Design a schema using an Entity Relationship Diagram (ERD) appropriate for the database of this website (assuming a relational database model)
 
   https://stackshare.io/ebay/ebay
   https://nodejs.org/en/about/
   https://en.wikipedia.org/wiki/Apache_Cassandra
   http://tomcat.apache.org/
+  https://vexxhost.com/blog/benefits-openstack-public-cloud-enterprises/
