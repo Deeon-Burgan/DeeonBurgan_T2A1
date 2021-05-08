@@ -119,11 +119,45 @@ To comply with the Privacy Act, the ACME corp would be required to:
 
 https://www.oaic.gov.au/privacy/the-privacy-act/
 
-## Q9. Describe the structural aspects of the relational database model. Your description should include information about the structure in which data is stored and how relations are represented in that structure.
+## Q9. Describe the structural aspects of the relational database model. Your description should include information about the structure in which data is stored and how relations are represented in that structure.  
+Data in a relational database is often organized into tables. These tables will have rows and columns which represent the attributes and records of the table.  
+When working with data that requires relationships between tables, this can be done by using foreign keys within a table. For example.  
+If we were to have a book table, and an author table, a book can have many authors, and an author can have many books, so we would have both tables, and a joiner table, which will take both primary keys from each table to join them into a many to many relationship.  
+Relation types we can have are as follows:  
+- one to many
+- one to one
+- many to many
+
+To conclude, the structure is as follows:
+- Data is stored into tables, with columns(data types), and rows(records)
+- Tables contain primary keys, which can be used in other tables to display relationships between the tables (foreign keys)
+- These relationships can be one of three types, many to many, one to many, or one to one
+
+![many to many relationship image](https://community.dbdiagram.io/uploads/default/original/1X/f3ac92b748d0b765685d8e7f241415fd1359c7b0.png)  
+img src: https://community.dbdiagram.io/t/tutorial-many-to-many-relationship/412
 
 ## Q10. Describe the integrity aspects of the relational database model. Your description should include information about the types of data integrity and how they can be enforced in a relational database.
+The integrity of a database is enforced by using a series of constraints and rules. Generally the three types of integrity constraints are as follows:
+- Entity integrity  
+Entity integrity is the idea of having a primary key for each table. This rule establishes the table integrity by providing a primary key which is required, and this key must be placed on a column that is unique, and not null.
 
-## Q11. Describe the manipulative aspects of the relational database model. Your description should include information about the ways in which data is manipulated (added, removed, changed, and retrieved) in a relational database.
+- Referential integrity  
+Referential integrity is the concept of keeping a foreign key for relationships between tables. The foreign key generally refers to a primary key in another table which we are forming a relationship to, but there can be times where the foreign can be null, meaning there is no relationship, or the relationship is unknown.
+
+- Domain integrity  
+Domain integrity refers to constraints that enforce the rule that all entries in a column of a table are only single entries, that are of the matching data type. The domain for the column also ensures that entries match requirements/rules of the attribute, for example, if we have a column that is in date format, we shouldn't be allowing names.
+
+https://en.wikipedia.org/wiki/Data_integrity#Integrity_types
+
+## Q11. Describe the manipulative aspects of the relational database model. Your description should include information about the ways in which data is manipulated (added, removed, changed, and retrieved) in a relational database.  
+In the relational database model, there are a number of ways to manipulate the data in our databases. 
+The specific functions to manipulate the data can differ from each database system, but the four main functions to modify our data are as follows:
+- Insert - Is used to insert an entry into a table or relation
+- Delete - Is used to remove an entry from a table or relation
+- Modify - Is used to edit values from an existing table or relation  
+- Select - Is used to choose an entry via query or indexing
+
+https://www.guru99.com/relational-data-model-dbms.html#4
 
 ## Q12. Conduct research into a marketplace website (app) and answer the following parts:  
 ### Ebay
@@ -167,7 +201,8 @@ https://www.oaic.gov.au/privacy/the-privacy-act/
   Node.js is used to create and build fast scalable applications, which is used alongside Marko for the user interface.  
   There is a lot that goes on, in the backend of Ebay. The main database system used for ebay is Oracle, as a large majority of the use of Ebay revolves around making online purchases and processing transactions.  
   Apache TomCat is the software which is running the servers, it being a piece of software which combines a number of Java-based technologies to run applications built with Java.
-  - Describe the way data is structured within the app
+  - Describe the way data is structured within the app  
+  We can assume that the data held in Ebay's servers are structured in a relational database. Each object in the database will be stored with column and row attributes that represent each part of the object. Each table in the database, when necessary, will have foreign keys that will point to other tables to create relationships between the tables. This structure builds a solid foundation for a two-way marketplace application.
   - Identify entities which must be tracked by the app
     - Users: tracks all information relevant to the users, could include, usernames, names, passwords, emails, addresses, etc.
     - User Feedback: a rating from another user, which contains a star value and short note.
@@ -182,7 +217,6 @@ https://www.oaic.gov.au/privacy/the-privacy-act/
         - Has many: listings
         - Has one: store
         - Has many: messages
-        - Has one: purchases
         - Has many: purchases
         - Has one: payment details
     - User Feedback:
@@ -200,7 +234,8 @@ https://www.oaic.gov.au/privacy/the-privacy-act/
         - Has one: listing
     - Payment details:
         - Has one: user
-  - Design a schema using an Entity Relationship Diagram (ERD) appropriate for the database of this website (assuming a relational database model)
+  - Design a schema using an Entity Relationship Diagram (ERD) appropriate for the database of this website (assuming a relational database model)  
+![Image of Schema](./Misc/Untitled.png "Image of Schema")
 
   https://stackshare.io/ebay/ebay
   https://nodejs.org/en/about/
