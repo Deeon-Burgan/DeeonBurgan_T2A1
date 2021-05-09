@@ -7,6 +7,8 @@ A brief explanation of each part of the architecture follows below:
 ### Model:
 The model is the storage of our data and logic.  
 In Rails the model represents the information in the database as well as the logic behind any validation.  
+The model interacts with the database anytime we want to amend our data, often using the CRUD system(create, read, update, delete)
+
 ### View:  
 The view is what's sent back to the browser, the GUI.  
 The view is the front-end of the application.  
@@ -41,19 +43,27 @@ Being an open source database application, PostgreSQL is not owned by a singular
 PostgreSQL is known for having a number of issues with performance and backup recovery.  
 PostgreSQL due to it's relational database structure, can struggle and perform slowly when working with a large number stores located in rows and columns of a table containing many fields of inforation
 
-aalpha.net/blog/pros-and-cons-of-using-postgresql-for-application-development/  
-https://www.postgresql.org/about/
+[Reference 1](aalpha.net/blog/pros-and-cons-of-using-postgresql-for-application-development/)  
+[Reference 2](https://www.postgresql.org/about/)
 
 ## Q3. Discuss the implementation of Agile project management methodology.  
 The Agile methodology is an alternative project management system, that focuses on separating a project into smaller parts, with an aim to help prioritize customer feedback in the development process.  
 Once work begins on a project, teams will cycle through a process of planning, executing and evaluating each segment, all the while being in near constant contact with customer's to get their feedback to ensure requirements are being met.  
 The Agile methodology is good because instead 'betting everything on a "big bang" launch', Agile allows a team to deliver their work in small, consumable increments which can be reviewed, and have feedback come in, regularly.
 
-atlassian.com/agile  
-wrike.com/project-management-guide/faq/what-is-agile-methodology-in-project-management/
+Often the Agile methodology will work as such:
+1. Making a roadmap for an application, which will outline timelines and goals for the future of the project
+2. Plan and implement sprints, which are our smaller goals, which are generally planned to roughly take the same amount of time.
+    - During these sprints, standup meetings may occur daily or weekly to ensure everyone is up to date on what is going on in the project, and to ensure nothing is being left behind or taking too long
+3. Reviewing how each sprint performed, and if there were any lacking areas that need to be assessed for the next sprint. 
+
+[Reference 1](atlassian.com/agile )  
+[Reference 2](wrike.com/project-management-guide/faq/what-is-agile-methodology-in-project-management/)
 
 ## Q4. Provide an overview and description of a standard source control workflow.
 ### Feature branch workflow:
+A method of source control is important in any project, as it's arguably the best way to protect a project from any difficulty or risk when working on a collective codebase. Source control is essentially a way for multiple developers(or just the one) to work together on a project without causing a mass amount of conflicts within the codebase, and without simply overriding someone else's work. It also gives a company or developer a safe place to track and keep a working version of there application online. 
+
 The feature branch workflow is a source control style which has the core idea that each feature being developed should take place on a dedicated branch, instead of being worked on the master branch.  
  Doing this makes it easy for a number of developers to work on a feature together without harming the main codebase, which also means the master branch will never be broken.
 
@@ -63,7 +73,7 @@ The feature branch workflow is a source control style which has the core idea th
  3. Developers will work on this new branch at all times when working on the new feature
  4. When the feature has been completed and tested, it will be merged into the master branch
 
- atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow
+ [reference](atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow)
 
  ## Q5. Provide an overview and description of a standard software testing process.
 ### Test driven development:
@@ -78,7 +88,7 @@ A brief example of how this is implemented is as such:
 4. tests are run again, and code is refactored if necessary
 5. rinse and repeat
 
-https://www.guru99.com/test-driven-development.html
+[reference](https://www.guru99.com/test-driven-development.html)
 
 ## Q6. Discuss and analyse requirements related to information system security and how they relate to the project.
 As the planned project is a marketplace application, there are a number of security measures that are required to ensure we meet ethical and legal obligations.
@@ -91,7 +101,7 @@ Firstly we'll have to consider our requirements when taking in user data. As a m
 
 Other things we'll need to worry about would include things such as illegal items being sold on our site, as well as scammers. We would need a way to ensure that items being sold on our site meet legal requirements, and are pertinent to our values and plan for this application. We would need to ensure our user's safety by implementing ways to filter out scammers, on the buying and selling side of our application.
 
-https://www.pcisecuritystandards.org/pci_security/maintaining_payment_security
+[reference](https://www.pcisecuritystandards.org/pci_security/maintaining_payment_security)
 
 ## Q7. Discuss common methods of protecting information and data and how you would apply them to the project
 ### Encryption
@@ -237,8 +247,9 @@ https://www.guru99.com/relational-data-model-dbms.html#4
   - Design a schema using an Entity Relationship Diagram (ERD) appropriate for the database of this website (assuming a relational database model)  
 ![Image of Schema](./Misc/Untitled.png "Image of Schema")
 
-  https://stackshare.io/ebay/ebay
-  https://nodejs.org/en/about/
-  https://en.wikipedia.org/wiki/Apache_Cassandra
-  http://tomcat.apache.org/
-  https://vexxhost.com/blog/benefits-openstack-public-cloud-enterprises/
+References:  
+  - https://stackshare.io/ebay/ebay  
+  - https://nodejs.org/en/about/  
+  - https://en.wikipedia.org/wiki/Apache_Cassandra  
+  - http://tomcat.apache.org/  
+  - https://vexxhost.com/blog/benefits-openstack-public-cloud-enterprises/
