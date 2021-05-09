@@ -4,6 +4,8 @@
 Rails typically uses an MVC architecture, which stands for, Model, View, Controller respectively.  
 
 A brief explanation of each part of the architecture follows below:  
+
+
 ### Model:
 The model is the storage of our data and logic.  
 In Rails the model represents the information in the database as well as the logic behind any validation.  
@@ -16,7 +18,9 @@ The view is the front-end of the application.
 The view is the part of the architecture which translates our data into a human readable format. The view communicates with the controller after it has made a request for data objects from the model. 
 The view also communicated back to the controller when necessary to make changes to the model, for instance, if we had a model called User, we might have a view which allows us to edit the a user, in this view, we would input our changes, then our changes would go to the controller, which would then go to the model to be saved/updated.
 
-In Rails the view contains html.erb files, where the embedded ruby is fairly simple, mainly used to display data from the model, or used to create fields to edit/add to the model. 
+In Rails the view contains html.erb files, where the embedded ruby is fairly simple, mainly used to display data from the model, or used to create fields to edit/add to the model.  
+
+
 ### Controller:  
 The controller is what's needed to manage the view and model of our application.
 The controller is the part of the MVC architecture, where we directly communicate with the model, and the view. The controller will often recieve data from the model to be used in the view, and will also take inputs from the view to update the model. 
@@ -51,11 +55,12 @@ The Agile methodology is an alternative project management system, that focuses 
 Once work begins on a project, teams will cycle through a process of planning, executing and evaluating each segment, all the while being in near constant contact with customer's to get their feedback to ensure requirements are being met.  
 The Agile methodology is good because instead 'betting everything on a "big bang" launch', Agile allows a team to deliver their work in small, consumable increments which can be reviewed, and have feedback come in, regularly.
 
-Often the Agile methodology will work as such:
-1. Making a roadmap for an application, which will outline timelines and goals for the future of the project
-2. Plan and implement sprints, which are our smaller goals, which are generally planned to roughly take the same amount of time.
+Often the Agile methodology will work as such:  
+
+1. Making a roadmap for the application, which will outline timelines and goals for the future of the project  
+2. Planing and implement sprints, which are our smaller goals, generally planned to take roughly the same amount of time for each sprint.  
     - During these sprints, standup meetings may occur daily or weekly to ensure everyone is up to date on what is going on in the project, and to ensure nothing is being left behind or taking too long
-3. Reviewing how each sprint performed, and if there were any lacking areas that need to be assessed for the next sprint. 
+3. Reviewing how each sprint performed, and if there were any lacking areas that need to be assessed for the next sprint.  
 
 [Reference 1](atlassian.com/agile )  
 [Reference 2](wrike.com/project-management-guide/faq/what-is-agile-methodology-in-project-management/)
@@ -65,17 +70,18 @@ Often the Agile methodology will work as such:
 A method of source control is important in any project, as it's arguably the best way to protect a project from any difficulty or risk when working on a collective codebase. Source control is essentially a way for multiple developers(or just the one) to work together on a project without causing a mass amount of conflicts within the codebase, and without simply overriding someone else's work. It also gives a company or developer a safe place to track and keep a working version of there application online. 
 
 The feature branch workflow is a source control style which has the core idea that each feature being developed should take place on a dedicated branch, instead of being worked on the master branch.  
- Doing this makes it easy for a number of developers to work on a feature together without harming the main codebase, which also means the master branch will never be broken.
+Doing this makes it easy for a number of developers to work on a feature together without harming the main codebase, which also means the master branch will never be broken.
 
- Essentially the way this style would be implemented is as such:  
- 1. A feature will be planned and discussed
- 2. A new branch will be created for this feature, generally forking from the master branch
- 3. Developers will work on this new branch at all times when working on the new feature
- 4. When the feature has been completed and tested, it will be merged into the master branch
+Essentially the way this style would be implemented is as such:  
 
- [reference](atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow)
+1. A feature will be planned and discussed
+2. A new branch will be created for this feature, generally forking from the master branch
+3. Developers will work on this new branch at all times when working on the new feature
+4. When the feature has been completed and tested, it will be merged into the master branch
 
- ## Q5. Provide an overview and description of a standard software testing process.
+[reference](atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow)
+
+## Q5. Provide an overview and description of a standard software testing process.
 ### Test driven development:
 Test driven development is an approach in which test cases of a program are developed before the actual program is developed, to specify and validate what the code needs to and will do.  
 TDD, starts with designing and developing test for every functionality of an application, then moves onto coding only if said test has failed, which avoids duplication of code.
@@ -95,9 +101,9 @@ As the planned project is a marketplace application, there are a number of secur
 
 As a marketplace application, we will be handling a lot of user data, which needs to be protected, so our user's aren't at risk of having their data sold, or used maliciously by unknown peoples.
 
-Firstly we'll have to consider our requirements when taking in user data. As a marketplace, generally we'll be dealing with user to user relations, and as such, we need to ensure that we will be storing a lot of data that is unique to each unique user. The data we will be storing, needs to be stored in a way that protects it from potential attackers and other users, as it could contain very personal information, such as phone numbers/addresses/full names/ etc.
+Firstly we'll have to consider our requirements when taking in user data. As a marketplace, generally we'll be dealing with user to user relations, and as such, we will be storing a lot of data that is unique to each user. The data we will be storing, needs to be stored in a way that protects it from potential attackers and other users, as it could contain very personal information, such as phone numbers/addresses/full names/ etc.
 
- Another big thing we'll have to think about is payment, obviously the easiest way for us to deal with this would be to put the onus on the users to discuss and agree to payment terms, but, if we decided to use some payment methods in our application, we would need to think about the legal and ethical requirements put upon us when we decide to do so. We would need to ensure we're following PCI standards, which are the rules and regulations which determine how payment data is stored online.
+Another big thing we'll have to think about is payment, obviously the easiest way for us to deal with this would be to put the onus on the users to discuss and agree to payment terms, but, if we decided to use some payment methods in our application, we would need to think about the legal and ethical requirements put upon us when we decide to do so. We would need to ensure we're following PCI standards, which are the rules and regulations which determine how payment data is stored online.
 
 Other things we'll need to worry about would include things such as illegal items being sold on our site, as well as scammers. We would need a way to ensure that items being sold on our site meet legal requirements, and are pertinent to our values and plan for this application. We would need to ensure our user's safety by implementing ways to filter out scammers, on the buying and selling side of our application.
 
@@ -107,25 +113,25 @@ Other things we'll need to worry about would include things such as illegal item
 ### Encryption
 As our application will certainly contain very sensitive information to our Users, we need to ensure that we're taking appropriate measures to protect their data. A very commonly used way to protect data online is through encryption.
 
-Encryption is a method of protecting one's data by encoding it, using some sort of encryption protocol, such as AES, RSA, Triple DES etc. The encrypted data can only be accessed and decrypted by someone who is in possession of the correct encryption key. 
+Encryption is a method of protecting one's data by encoding it, using some sort of encryption protocol, such as AES, RSA, Triple DES etc. The encrypted data can only be decrypted and then accessed by someone who is in possession of the correct encryption key. 
 
-The encyrpted data to an outside entity who isn't in possession of the correct key, looks like garbage, and is completely useless, which is why it's a very good way of protected the data of our users, especially when we come to talk about highly sensitive information such as personally revealing data, and credit/debit card numbers.
+The encyrpted data to someone who isn't in possession of the correct key, looks like garbage, and is completely useless, which is why it's a very good way of protecting the sensitive data of our users, especially when we come to talk about highly sensitive information such as personally revealing data, and credit/debit card numbers.
 
 In our project, we should be encrypting our data before we save it into our database. Our less important data doesn't necessarily need to be encrypted, but for our highly sensitive data, such as important user data(credit card numbers, phone numbers, address), we would aim to encrypt it before putting it into our database, and depending on the software used, the database itself would itself be encrypted as well.
 
 ## Q8. Research what your legal obligations are in relation to handling user data and how they can be met for the project
 
-If the ACME corp has an annual turnover of at least $3M, they are required by law to comply with the Privary Act of 1988.  
+If the ACME corp has an annual turnover of at least $3M, they would required by law to comply with the Privary Act of 1988.  
 The Privacy Act includes 13 privacy principles which apply to some private sector organisations, as well as most Australian government agencies. 
 
 Even if ACME corp isn't required by law to follow the Privacy Act, it would be smart to follow it anyway, as it would keep us safe from potential breaches of privacy, and will instill a great amount of trust with users
 
-To comply with the Privacy Act, the ACME corp would be required to:
-- Tell users why their personal information is being collected, how it will be used, and who it will be disclosed to
-- Give users the option to remain anonymous, through the use of a pseudonym or simply by not identifying one's self
-- Give the users an option to access their own personal information
-- Give users the ability to stop receiving unwanted direct marketing
-- And give users the ability to make a complaint about the corp, if they think we've mishandled their personal information.
+To comply with the Privacy Act, the ACME corp would be required to:  
+- Tell users why their personal information is being collected, how it will be used, and who it will be disclosed to  
+- Give users the option to remain anonymous, through the use of a pseudonym or simply by not identifying one's self  
+- Give the users an option to access their own personal information  
+- Give users the ability to stop receiving unwanted direct marketing  
+- And give users the ability to make a complaint about the corp, if they think we've mishandled their personal information.  
 
 https://www.oaic.gov.au/privacy/the-privacy-act/
 
@@ -133,26 +139,31 @@ https://www.oaic.gov.au/privacy/the-privacy-act/
 Data in a relational database is often organized into tables. These tables will have rows and columns which represent the attributes and records of the table.  
 When working with data that requires relationships between tables, this can be done by using foreign keys within a table. For example.  
 If we were to have a book table, and an author table, a book can have many authors, and an author can have many books, so we would have both tables, and a joiner table, which will take both primary keys from each table to join them into a many to many relationship.  
+
+![many to many relationship image](./Misc/manytomany.png)  
+
 Relation types we can have are as follows:  
+
 - one to many
 - one to one
 - many to many
 
-To conclude, the structure is as follows:
+To conclude, the structure is as follows:  
+
 - Data is stored into tables, with columns(data types), and rows(records)
 - Tables contain primary keys, which can be used in other tables to display relationships between the tables (foreign keys)
 - These relationships can be one of three types, many to many, one to many, or one to one
 
-![many to many relationship image](https://community.dbdiagram.io/uploads/default/original/1X/f3ac92b748d0b765685d8e7f241415fd1359c7b0.png)  
-img src: https://community.dbdiagram.io/t/tutorial-many-to-many-relationship/412
+<!-- img src: https://community.dbdiagram.io/t/tutorial-many-to-many-relationship/412 -->
 
 ## Q10. Describe the integrity aspects of the relational database model. Your description should include information about the types of data integrity and how they can be enforced in a relational database.
-The integrity of a database is enforced by using a series of constraints and rules. Generally the three types of integrity constraints are as follows:
+The integrity of a database is enforced by using a series of constraints and rules. Generally speaking, the three types of integrity constraints are as follows:  
+
 - Entity integrity  
-Entity integrity is the idea of having a primary key for each table. This rule establishes the table integrity by providing a primary key which is required, and this key must be placed on a column that is unique, and not null.
+Entity integrity is the idea of having a primary key for each table. This rule establishes the table's integrity by providing a primary key which is required, and this key must be placed on a column that is unique, and not null.
 
 - Referential integrity  
-Referential integrity is the concept of keeping a foreign key for relationships between tables. The foreign key generally refers to a primary key in another table which we are forming a relationship to, but there can be times where the foreign can be null, meaning there is no relationship, or the relationship is unknown.
+Referential integrity is the concept of keeping a foreign key for relationships between tables. The foreign key generally refers to a primary key in another table which we are forming a relationship to, but there can be times where the foreign key can be null, meaning there is no relationship, or the relationship is unknown.
 
 - Domain integrity  
 Domain integrity refers to constraints that enforce the rule that all entries in a column of a table are only single entries, that are of the matching data type. The domain for the column also ensures that entries match requirements/rules of the attribute, for example, if we have a column that is in date format, we shouldn't be allowing names.
@@ -161,11 +172,11 @@ https://en.wikipedia.org/wiki/Data_integrity#Integrity_types
 
 ## Q11. Describe the manipulative aspects of the relational database model. Your description should include information about the ways in which data is manipulated (added, removed, changed, and retrieved) in a relational database.  
 In the relational database model, there are a number of ways to manipulate the data in our databases. 
-The specific functions to manipulate the data can differ from each database system, but the four main functions to modify our data are as follows:
-- Insert - Is used to insert an entry into a table or relation
-- Delete - Is used to remove an entry from a table or relation
-- Modify - Is used to edit values from an existing table or relation  
-- Select - Is used to choose an entry via query or indexing
+The specific functions to manipulate the data can differ from each database system, but the four main functions to modify our data are as follows:  
+- Insert - Is used to insert an entry into a table or relation  
+- Delete - Is used to remove an entry from a table or relation  
+- Modify - Is used to edit values from an existing table or relation   
+- Select - Is used to choose an entry via query or indexing  
 
 https://www.guru99.com/relational-data-model-dbms.html#4
 
